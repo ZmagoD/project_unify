@@ -44,7 +44,7 @@ describe Api::V1::SessionsController do
     describe 'user log out' do
       before(:each) do
         post '/api/v1/users/sign_in', {user:{email:"#{user.email}", password:"#{user.password}"}}, headers
-        delete '/api/v1/users/sign_out', {user:{authentication_token: "#{user.authentication_token}"}}, headers
+        delete '/api/v1/users/sign_out', {} , { UNIFY_API_TOKEN: "#{user.authentication_token}", HTTP_ACCEPT: 'application/json' }
       end
       
       it 'should return status 204' do

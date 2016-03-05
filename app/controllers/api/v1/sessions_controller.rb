@@ -14,9 +14,12 @@ class Api::V1::SessionsController < Devise::SessionsController
   end
 
   def destroy
-    user = User.find_by_authentication_token(request.headers['X-API-TOKEN'])
+    resource_class = ActiveRecord::Base::User
+    user = resource_class.find_by_authentication_token(request.headers['UNIFY_API_TOKEN'])
     if user
       user.authentication_token = nil
+      user.save
+      #binding.pry
       render json: { message: 'Session deleted.' }, status: 204
     else
       render json: { message: 'Invalid token.' }, status: 404
