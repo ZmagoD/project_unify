@@ -36,7 +36,6 @@ describe Api::V1::SessionsController do
         post '/api/v1/users/sign_in', {user: {email: "#{user_2.email}", password: "#{user_2.password}"}}, {HTTP_ACCEPT: 'application/json',
                                                                                                           REMOTE_ADDR: '24.193.83.1'}
       
-        
         expect(response_json).to eq('message' => 'success',
                             'user' => {
                                 'id' => user_2.id,
@@ -51,6 +50,7 @@ describe Api::V1::SessionsController do
                                 'token' => user_2.authentication_token
                             })
       end
+      
       it 'invalid password returns error message' do
         post '/api/v1/users/sign_in', {user: {email: "#{user.email}", password: 'wrong_password'}}, headers
         expect(response_json).to eq('error' => 'Invalid email or password.')
