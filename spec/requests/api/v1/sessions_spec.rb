@@ -35,7 +35,7 @@ describe Api::V1::SessionsController do
       it 'should set a user address if is not already set' do
         post '/api/v1/users/sign_in', {user: {email: "#{user_2.email}", password: "#{user_2.password}"}}, {HTTP_ACCEPT: 'application/json',
                                                                                                           REMOTE_ADDR: '24.193.83.1'}
-      
+        
         expect(response_json).to eq('message' => 'success',
                             'user' => {
                                 'id' => user_2.id,
