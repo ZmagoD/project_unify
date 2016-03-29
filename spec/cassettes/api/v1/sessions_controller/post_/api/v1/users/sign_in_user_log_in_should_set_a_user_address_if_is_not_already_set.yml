@@ -24,14 +24,8 @@ http_interactions:
       - Origin
       X-Database-Date:
       - Fri, 25 Mar 2016 01:50:28 GMT
-      X-Ratelimit-Limit:
-      - '10000'
-      X-Ratelimit-Remaining:
-      - '9998'
-      X-Ratelimit-Reset:
-      - '2531'
       Date:
-      - Fri, 25 Mar 2016 21:23:58 GMT
+      - Tue, 29 Mar 2016 06:21:54 GMT
       Content-Length:
       - '242'
     body:
@@ -41,5 +35,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Fri, 25 Mar 2016 21:23:58 GMT
+  recorded_at: Tue, 29 Mar 2016 06:21:54 GMT
 recorded_with: VCR 3.0.1
