@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::SessionsController do
 
   let(:user) { FactoryGirl.create(:user, latitude: 44, longitude: 13) }
-  let(:user_2) { FactoryGirl.create(:user, ip_address: "24.193.83.1", latitude: nil, longitude: nil) }
+  let(:user_2) { FactoryGirl.create(:user, latitude: nil, longitude: nil) }
   let(:headers) { {HTTP_ACCEPT: 'application/json'} }
 
   describe 'POST /api/v1/users/sign_in' do
